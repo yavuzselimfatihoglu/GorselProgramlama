@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hafta4 - RuntimeEvents-KeyEvents-MouseEvents-OrtakEvent-Timer", "Hafta4 - RuntimeEvents-KeyEvents-MouseEvents-OrtakEvent-Timer.csproj", "{D839F072-35A1-4552-B252-07B0E3E3C941}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D839F072-35A1-4552-B252-07B0E3E3C941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D839F072-35A1-4552-B252-07B0E3E3C941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D839F072-35A1-4552-B252-07B0E3E3C941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D839F072-35A1-4552-B252-07B0E3E3C941}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E79C9B0A-75A1-4473-8FD1-3E3FEBD6B449}
+	EndGlobalSection
+EndGlobal
