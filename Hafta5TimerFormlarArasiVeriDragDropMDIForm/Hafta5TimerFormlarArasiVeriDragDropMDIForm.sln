@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hafta5TimerFormlarArasiVeriDragDropMDIForm", "Hafta5TimerFormlarArasiVeriDragDropMDIForm.csproj", "{933593D1-FBA1-40AF-B855-C11AE05B73CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hafta5TimerFormlarArasiVeriDragDropMDIForm", "Hafta5TimerFormlarArasiVeriDragDropMDIForm.csproj", "{933593D1-FBA1-40AF-B855-C11AE05B73CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hafta6FormlararasiVeri", "..\Hafta6FormlararasiVeri\Hafta6FormlararasiVeri.csproj", "{79FB7F64-D928-4D98-9669-4B397298CAF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{933593D1-FBA1-40AF-B855-C11AE05B73CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{933593D1-FBA1-40AF-B855-C11AE05B73CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{933593D1-FBA1-40AF-B855-C11AE05B73CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79FB7F64-D928-4D98-9669-4B397298CAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79FB7F64-D928-4D98-9669-4B397298CAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79FB7F64-D928-4D98-9669-4B397298CAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79FB7F64-D928-4D98-9669-4B397298CAF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

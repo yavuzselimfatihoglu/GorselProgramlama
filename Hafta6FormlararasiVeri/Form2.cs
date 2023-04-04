@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hafta5TimerFormlarArasiVeriDragDropMDIForm
+namespace Hafta6FormlararasiVeri
 {
-    public partial class Form4 : Form
+    public partial class Form2 : Form
     {
-        public Form4()
+        public Form2()
         {
             InitializeComponent();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            label1.Text = Form1.deger;
         }
     }
 }

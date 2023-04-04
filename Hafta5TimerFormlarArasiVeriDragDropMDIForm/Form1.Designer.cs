@@ -93,7 +93,7 @@
             Controls.Add(listBox1);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Drag Drop";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();

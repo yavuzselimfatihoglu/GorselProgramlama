@@ -1,4 +1,4 @@
-namespace Hafta5TimerFormlarArasiVeriDragDropMDIForm
+namespace NotepadUygulamasi
 {
     internal static class Program
     {
@@ -11,7 +11,7 @@ namespace Hafta5TimerFormlarArasiVeriDragDropMDIForm
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form3());
+            Application.Run(new Form1());
         }
     }
 }
