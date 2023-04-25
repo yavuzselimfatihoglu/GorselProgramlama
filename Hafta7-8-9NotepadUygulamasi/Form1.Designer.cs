@@ -65,6 +65,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
+            printDialog1 = new PrintDialog();
             toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             toolStripContainer1.ContentPanel.SuspendLayout();
             toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -120,6 +121,7 @@
             richTextBox1.Size = new Size(800, 376);
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // menuStrip1
             // 
@@ -171,6 +173,7 @@
             yazdırToolStripMenuItem.Name = "yazdırToolStripMenuItem";
             yazdırToolStripMenuItem.Size = new Size(172, 22);
             yazdırToolStripMenuItem.Text = "Yazdır";
+            yazdırToolStripMenuItem.Click += yazdırToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
@@ -228,7 +231,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, openToolStripButton, saveToolStripButton, printToolStripButton, toolStripSeparator, cutToolStripButton, copyToolStripButton, pasteToolStripButton, toolStripSeparator1, helpToolStripButton, toolStripSeparator2, toolStripTextBox1 });
             toolStrip1.Location = new Point(3, 24);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(347, 25);
+            toolStrip1.Size = new Size(316, 25);
             toolStrip1.TabIndex = 1;
             // 
             // newToolStripButton
@@ -271,6 +274,7 @@
             printToolStripButton.Name = "printToolStripButton";
             printToolStripButton.Size = new Size(23, 22);
             printToolStripButton.Text = "&Print";
+            printToolStripButton.Click += printToolStripButton_Click;
             // 
             // toolStripSeparator
             // 
@@ -338,6 +342,10 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // printDialog1
+            // 
+            printDialog1.UseEXDialog = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -347,6 +355,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             toolStripContainer1.BottomToolStripPanel.PerformLayout();
@@ -401,5 +410,6 @@
         private System.Windows.Forms.Timer timer1;
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
+        private PrintDialog printDialog1;
     }
 }
