@@ -66,6 +66,13 @@
             saveFileDialog1 = new SaveFileDialog();
             openFileDialog1 = new OpenFileDialog();
             printDialog1 = new PrintDialog();
+            fontDialog1 = new FontDialog();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            kesToolStripMenuItem1 = new ToolStripMenuItem();
+            kopyalaToolStripMenuItem1 = new ToolStripMenuItem();
+            yapıştırToolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripSeparator();
+            biçimleToolStripMenuItem = new ToolStripMenuItem();
             toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             toolStripContainer1.ContentPanel.SuspendLayout();
             toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -73,6 +80,7 @@
             toolStrip2.SuspendLayout();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStripContainer1
@@ -122,6 +130,8 @@
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "";
             richTextBox1.TextChanged += richTextBox1_TextChanged;
+            richTextBox1.MouseDown += richTextBox1_MouseDown;
+            richTextBox1.MouseMove += richTextBox1_MouseMove;
             // 
             // menuStrip1
             // 
@@ -198,32 +208,37 @@
             // kesToolStripMenuItem
             // 
             kesToolStripMenuItem.Name = "kesToolStripMenuItem";
-            kesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            kesToolStripMenuItem.Size = new Size(134, 22);
+            kesToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
+            kesToolStripMenuItem.Size = new Size(154, 22);
             kesToolStripMenuItem.Text = "&Kes";
+            kesToolStripMenuItem.Click += kesToolStripMenuItem_Click;
             // 
             // kopyalaToolStripMenuItem
             // 
             kopyalaToolStripMenuItem.Name = "kopyalaToolStripMenuItem";
-            kopyalaToolStripMenuItem.Size = new Size(134, 22);
+            kopyalaToolStripMenuItem.Size = new Size(154, 22);
             kopyalaToolStripMenuItem.Text = "Kopyala";
+            kopyalaToolStripMenuItem.Click += kopyalaToolStripMenuItem_Click;
             // 
             // yapıştırToolStripMenuItem
             // 
             yapıştırToolStripMenuItem.Name = "yapıştırToolStripMenuItem";
-            yapıştırToolStripMenuItem.Size = new Size(134, 22);
+            yapıştırToolStripMenuItem.Size = new Size(154, 22);
             yapıştırToolStripMenuItem.Text = "Yapıştır";
+            yapıştırToolStripMenuItem.Click += yapıştırToolStripMenuItem_Click;
             // 
             // toolStripMenuItem3
             // 
             toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(131, 6);
+            toolStripMenuItem3.Size = new Size(151, 6);
             // 
             // biçimToolStripMenuItem
             // 
             biçimToolStripMenuItem.Name = "biçimToolStripMenuItem";
-            biçimToolStripMenuItem.Size = new Size(134, 22);
-            biçimToolStripMenuItem.Text = "Biçim";
+            biçimToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.B;
+            biçimToolStripMenuItem.Size = new Size(154, 22);
+            biçimToolStripMenuItem.Text = "Biçimle";
+            biçimToolStripMenuItem.Click += biçimToolStripMenuItem_Click;
             // 
             // toolStrip1
             // 
@@ -289,6 +304,8 @@
             cutToolStripButton.Name = "cutToolStripButton";
             cutToolStripButton.Size = new Size(23, 22);
             cutToolStripButton.Text = "C&ut";
+            cutToolStripButton.ToolTipText = "Kes";
+            cutToolStripButton.Click += cutToolStripButton_Click;
             // 
             // copyToolStripButton
             // 
@@ -298,6 +315,8 @@
             copyToolStripButton.Name = "copyToolStripButton";
             copyToolStripButton.Size = new Size(23, 22);
             copyToolStripButton.Text = "&Copy";
+            copyToolStripButton.ToolTipText = "Kopyala";
+            copyToolStripButton.Click += copyToolStripButton_Click;
             // 
             // pasteToolStripButton
             // 
@@ -307,6 +326,8 @@
             pasteToolStripButton.Name = "pasteToolStripButton";
             pasteToolStripButton.Size = new Size(23, 22);
             pasteToolStripButton.Text = "&Paste";
+            pasteToolStripButton.ToolTipText = "Yapıştır";
+            pasteToolStripButton.Click += pasteToolStripButton_Click;
             // 
             // toolStripSeparator1
             // 
@@ -320,7 +341,8 @@
             helpToolStripButton.ImageTransparentColor = Color.Magenta;
             helpToolStripButton.Name = "helpToolStripButton";
             helpToolStripButton.Size = new Size(23, 22);
-            helpToolStripButton.Text = "He&lp";
+            helpToolStripButton.Text = "Biçimle";
+            helpToolStripButton.Click += helpToolStripButton_Click;
             // 
             // toolStripSeparator2
             // 
@@ -346,6 +368,45 @@
             // 
             printDialog1.UseEXDialog = true;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { kesToolStripMenuItem1, kopyalaToolStripMenuItem1, yapıştırToolStripMenuItem1, toolStripMenuItem4, biçimleToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(117, 98);
+            // 
+            // kesToolStripMenuItem1
+            // 
+            kesToolStripMenuItem1.Name = "kesToolStripMenuItem1";
+            kesToolStripMenuItem1.Size = new Size(116, 22);
+            kesToolStripMenuItem1.Text = "Kes";
+            kesToolStripMenuItem1.Click += kesToolStripMenuItem1_Click;
+            // 
+            // kopyalaToolStripMenuItem1
+            // 
+            kopyalaToolStripMenuItem1.Name = "kopyalaToolStripMenuItem1";
+            kopyalaToolStripMenuItem1.Size = new Size(116, 22);
+            kopyalaToolStripMenuItem1.Text = "Kopyala";
+            kopyalaToolStripMenuItem1.Click += kopyalaToolStripMenuItem1_Click;
+            // 
+            // yapıştırToolStripMenuItem1
+            // 
+            yapıştırToolStripMenuItem1.Name = "yapıştırToolStripMenuItem1";
+            yapıştırToolStripMenuItem1.Size = new Size(116, 22);
+            yapıştırToolStripMenuItem1.Text = "Yapıştır";
+            yapıştırToolStripMenuItem1.Click += yapıştırToolStripMenuItem1_Click;
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(113, 6);
+            // 
+            // biçimleToolStripMenuItem
+            // 
+            biçimleToolStripMenuItem.Name = "biçimleToolStripMenuItem";
+            biçimleToolStripMenuItem.Size = new Size(116, 22);
+            biçimleToolStripMenuItem.Text = "Biçimle";
+            biçimleToolStripMenuItem.Click += biçimleToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -370,6 +431,7 @@
             menuStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -411,5 +473,12 @@
         private SaveFileDialog saveFileDialog1;
         private OpenFileDialog openFileDialog1;
         private PrintDialog printDialog1;
+        private FontDialog fontDialog1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem kesToolStripMenuItem1;
+        private ToolStripMenuItem kopyalaToolStripMenuItem1;
+        private ToolStripMenuItem yapıştırToolStripMenuItem1;
+        private ToolStripSeparator toolStripMenuItem4;
+        private ToolStripMenuItem biçimleToolStripMenuItem;
     }
 }

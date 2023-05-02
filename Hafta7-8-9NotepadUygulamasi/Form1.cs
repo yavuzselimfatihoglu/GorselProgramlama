@@ -20,7 +20,7 @@ namespace Hafta7NotepadUygulamasi
             //richtext içinde deðiþiklik olursa: Modified =true
             if (richTextBox1.Modified == true)
             {
-               
+
                 //Kaydetmek istiyor musun?
                 cvp = MessageBox.Show("Kaydetmek istiyor musun?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (cvp == DialogResult.Yes)
@@ -57,7 +57,7 @@ namespace Hafta7NotepadUygulamasi
                     richTextBox1.SaveFile(saveFileDialog1.FileName);
                     dosyaAdi = Path.GetFileName(saveFileDialog1.FileName);
                     dosyaAdiPathile = saveFileDialog1.FileName;
-                    richTextBox1.Modified = false;   
+                    richTextBox1.Modified = false;
                     dosyaKayitliMi = true;
                 }
             }
@@ -89,7 +89,7 @@ namespace Hafta7NotepadUygulamasi
                     dosyaAdiPathile = openFileDialog1.FileName; // dosya kayýtlý mý iþlemi için gerekli global deðiþken
                     dosyaAdi = Path.GetFileName(openFileDialog1.FileName); //bu title için kullanýlacak global deðiþken
                     dosyaKayitliMi = true;
-                    richTextBox1.Modified= false;
+                    richTextBox1.Modified = false;
                 }
                 catch (Exception e)
                 {
@@ -100,8 +100,35 @@ namespace Hafta7NotepadUygulamasi
         }
 
         //Bicimleme()
-        //Kes , kopyala, yapýþtýr
+        void Bicimle()
+        {
+            fontDialog1.ShowColor = true;
+            fontDialog1.ShowDialog();
+            richTextBox1.SelectionFont = fontDialog1.Font;
+            richTextBox1.SelectionColor = fontDialog1.Color;
+        }
 
+        //Kes , kopyala, yapýþtýr
+        void Kes()
+        {
+
+            richTextBox1.Cut();
+        }
+
+        void Kopyala()
+        {
+            // if (richTextBox1.SelectionLength > 0)
+            // {
+            richTextBox1.Copy();
+            // }
+            // else
+            //     MessageBox.Show("kopyalamak için seçim yapýnýz!!!");
+        }
+
+        void Yapistir()
+        {
+            richTextBox1.Paste();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -169,7 +196,80 @@ namespace Hafta7NotepadUygulamasi
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-           // Kontrol();
+            // Kontrol();
+        }
+
+        private void kesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Kes();
+        }
+
+        private void cutToolStripButton_Click(object sender, EventArgs e)
+        {
+            Kes();
+        }
+
+        private void kopyalaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Kopyala();
+        }
+
+        private void copyToolStripButton_Click(object sender, EventArgs e)
+        {
+            Kopyala();
+        }
+
+        private void yapýþtýrToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Yapistir();
+        }
+
+        private void pasteToolStripButton_Click(object sender, EventArgs e)
+        {
+            Yapistir();
+        }
+
+        private void biçimToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bicimle();
+        }
+
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            Bicimle();
+        }
+
+        private void kesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Kes();
+        }
+
+        private void kopyalaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Kopyala();
+        }
+
+        private void yapýþtýrToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Yapistir();
+        }
+
+        private void biçimleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bicimle();
+        }
+
+        private void richTextBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolStripTextBox1.Text = "X:" + e.X.ToString() + "-Y:" + e.Y.ToString();
+        }
+
+        private void richTextBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenuStrip1.Show(richTextBox1, new Point(e.X, e.Y));
+            }
         }
     }
 }
